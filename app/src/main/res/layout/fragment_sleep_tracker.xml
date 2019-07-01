@@ -76,6 +76,7 @@
             app:layout_constraintBaseline_toBaselineOf="@id/stop_button"
             app:layout_constraintEnd_toStartOf="@+id/stop_button"
             app:layout_constraintHorizontal_chainStyle="spread"
+            android:enabled="@{safeUnbox(sleepTrackerViewModel.startButtonVisible)}"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
@@ -89,6 +90,7 @@
             android:onClick="@{() -> sleepTrackerViewModel.onStopTracking()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/start_button"
+            android:enabled="@{safeUnbox(sleepTrackerViewModel.stopButtonVisible)}"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
@@ -100,6 +102,7 @@
             android:layout_marginEnd="@dimen/margin"
             android:layout_marginBottom="@dimen/margin"
             android:text="@string/clear"
+            android:enabled="@{safeUnbox(sleepTrackerViewModel.clearButtonVisible)}"
             android:onClick="@{() -> sleepTrackerViewModel.onClear()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
